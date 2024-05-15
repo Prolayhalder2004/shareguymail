@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        *{
+            background-color: #121212;
+            color: #eee;
+            box-sizing: border-box;
+            margin: 0;
+            padding:0 ;
+        }
+        a{
+            border: 2px solid #eee;
+            background-color: #000;
+            color: #eee;
+            padding: 0.5%;
+            border-radius: 10px;
+            text-decoration: none;
+            display: block;
+            width: 7%;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            color: #eee;
+            margin:2% 0;
+        }
+        div.c{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        p{
+            text-align: center;
+            margin-bottom: 2%;
+            background-color: #000;
+        }
+        div.con{
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 2%;
+            width: 60%;
+            margin: auto;
+            margin-bottom: 2%;
+            background-color: #000;
+        }
+    </style>
+    <title>Email Sent</title>
+</head>
+<body>
+    
+    <h1>SUCCESS</h1>
+    <div class="con">
+    <p>Please check the file sent to {{ recipient_email }} and Check the spam folder.</p>
+</div>
+    <div class="c">
+    <a href="/">GO BACK</a>
+    <a href="https://shareguy.netlify.app/">GO HOME</a>
+</div>
+</body>
+</html>

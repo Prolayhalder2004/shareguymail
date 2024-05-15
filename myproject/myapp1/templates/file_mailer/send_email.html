@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background-color: #121212;
+            scroll-behavior: smooth;
+            color: #eee;
+        }
+        a{
+            background-color: #0F1111;
+        }
+        div.nav img {
+            height: 50px; /* Adjust as needed */
+            transform: translate(60%, 0%);
+            background-color: #0F1111;
+        }
+
+        div.nav {
+            width: 100%;
+            border: 5px double #eee;
+            background-color: #0F1111;
+        }
+
+        button{
+            margin: auto;
+            display: block;
+            width: 15%;
+            margin-top: 2%;
+            background-color: #eee;
+            color: #0F1111;
+            padding: 0.5%;
+            border-radius: 10px;
+        }
+
+        .email-input{
+            width: 70%;
+            padding: 2%;
+            border: 1px solid #eee;
+            border-radius: 10px;
+             margin-bottom: 2.5%;
+        }
+
+        h2{
+            text-align: center;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+
+        /* #animation {
+            background: #000 url(https://no-ad.000webhostapp.com/wp-content/uploads/2023/11/sasta-movies.gif) no-repeat center center;
+            background-size: 15%;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+        } */
+        div.b{
+            border: 2px solid #eee;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            padding: 2%;
+        }
+        @media(max-width:535px){
+            div.b{
+                border: 2px solid #eee;
+                width: 90%;
+            }
+            button{
+                width: 50%;
+                margin-top: 5%;
+            }
+            .email-input{
+                width:100%;
+                margin: 4% 0;
+            }
+            .file-input{
+                margin: 4% auto;
+                
+            }
+        }
+        #loader {
+            display: none;
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -60px;
+            margin-left: -60px;
+            z-index: 9999;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader"></div>
+    <div class="nav">
+        <a href="https://shareguy.netlify.app/">
+            <img src="http://prolay.c1.is/Share-GUY-5-7-2024.png" alt="Logo">
+        </a>
+    </div>
+    <h2>Send File via Email</h2>
+    <form id="emailForm" method="post" enctype="multipart/form-data" onsubmit="textchange()">
+        {% csrf_token %}
+        <div class="b">
+            {{ form.as_p }}
+        </div>
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        document.getElementById("emailForm").onsubmit = function() {
+            document.getElementById("loader").style.display = "block";
+        };
+    </script>
+</body>
+
+</html>
